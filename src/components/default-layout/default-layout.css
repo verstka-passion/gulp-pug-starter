@@ -1,0 +1,7 @@
+.default-layout {
+  min-height: 100dvb;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: sans-serif;
+}
