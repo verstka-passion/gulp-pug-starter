@@ -1,23 +1,18 @@
 extends ../layouts/default
 
+block variables
+	- var title = 'Главная страница'
+	- 
+		var cardsData = [
+			{'image': '/images/card.svg', 'title': 'Заголовок карточки 1', 'text': 'Текст карточки 1'},
+			{'image': '/images/card.svg', 'title': 'Заголовок карточки 2', 'text': 'Текст карточки 2'},
+			{'image': '/images/card.svg', 'title': 'Заголовок карточки 3', 'text': 'Текст карточки 3'}
+		]
+
 block content
 	include ../components/cards-list/cards-list
 		block items
-			article.card
-				.card__image
-					img(src='/images/card.svg', alt="")
-				.card__content
-					.card__title Заголовок карточки 1
-					.card__text Текст карточки 1
-			article.card
-				.card__image
-					img(src='/images/card.svg', alt="")
-				.card__content
-					.card__title Заголовок карточки 2
-					.card__text Текст карточки 2
-			article.card
-				.card__image
-					img(src='/images/card.svg', alt="")
-				.card__content
-					.card__title Заголовок карточки 3
-					.card__text Текст карточки 3
+			include ../components/card/card
+			+card(cardsData[0].image, cardsData[0].title, cardsData[0].text)
+			+card(cardsData[1].image, cardsData[1].title, cardsData[1].text)
+			+card(cardsData[2].image, cardsData[2].title, cardsData[2].text)
