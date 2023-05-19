@@ -9,5 +9,6 @@ html(lang="ru")
     link(rel="stylesheet", href="/bundle.css")
   body.default-layout
     include ../components/header/header
+    +header(includeHomeLink)
     block content
     include ../components/footer/footer
